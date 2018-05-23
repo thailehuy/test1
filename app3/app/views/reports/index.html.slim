@@ -1,0 +1,9 @@
+table border=1
+  thead
+    th Seed string
+    th Consumed?
+  tbody
+    - @data.each do |datum|
+      tr
+        td= datum['seed']
+        td= datum['consumed']
