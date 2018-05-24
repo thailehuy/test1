@@ -3,10 +3,7 @@ class Seeder < ApplicationRecord
 
   class << self
     def generate_seed
-      last_seed = Seeder.order(created_at: :desc).first
-      if !last_seed || last_seed.created_at < Time.now - 5.minutes
-        Seeder.create(seed: seed_string)
-      end
+      Seeder.create(seed: seed_string)
     end
 
     def seed_string
